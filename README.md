@@ -54,8 +54,24 @@ nossa codificação.
 Mas ainda precisamos de mais algumas ferramentas, e utilizaremos o Homebrew para
 instalá-las:
 
-- htop
-- git
-- java
+TODO
+* Atualizar
+  - Java
+  - Git
+  - Ruby
+  - Emacs
+  - Perl5
+  
+* Instalar
+  - htop
+  - JDK
+  - Rust
+  - Python3
+  - Perl6
+  - NodeJS
+  - VSCode
 
-TODO: Continua...
+* Configurar
+  - Oh My Zsh com fontes Powerline
+  - Terminal
+  - Vim

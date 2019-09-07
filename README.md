@@ -139,6 +139,12 @@ $ cpan -u
 
 Demora um pouco, mas vale à pena!
 
+Para uma experiência mais moderna, sugiro também experimentar o **Perl6**
+(https://www.perl6.org/), por isso vamos instalá-lo também:
+```sh
+$ brew install perl6
+```
+
 ### Python
 
 Já temos o Python `v2.7` instalado, e ele vem com o `easy_install` e o `wheel`.
@@ -229,28 +235,73 @@ aprender caso seja um iniciante em **Vim** (como eu).
 No caso do **macOS** eu recomendo atualizar o mapeamento da tecla **Lead** de `\\`
 para `\<Space` devido ao layout do teclado.
 
-- Emacs 22 (https://www.gnu.org/software/emacs)
-- OpenSSL/LibreSSL (https://www.libressl.org, https://www.openssl.org)
-- SQLite3 (https://www.sqlite.org)
+### Emacs
+
+Já temos o Emacs 22, mas se você quer utilizar os recursos modernos eo **Emacs**
+(como eu), precisamos atualizar para a versão `v26`:
+```sh
+$ brew install emacs
+```
+
+Se você não se sentir confortável com utilizar a tecla `ESC+m` como tecla de meta,
+pode encontrar uma ajuda em https://www.emacswiki.org/emacs/MetaKeyProblems.
+
+### OpenSSL/LibreSSL
+
+Já temos o LibreSSL `2.2.7` instalado mas eu prefiro a última versão disponível:
+```sh
+$ brew install openssl
+```
+
+Só que também vamos precisar atualizar nossa variável de ambiente `$PATH`:
+```sh
+$ echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bashrc
+$ . ~/.bashrc
+```
+
+### SQLite3
+
+O SQLite3 é uma mão na roda para o desenvolvimento com banco de dados local,
+por isso vamos atualizá-lo também:
+```sh
+$ brew install sqlite3
+```
+
+Para esse também precisamos atualizar nossa variável de ambiente `$PATH`:
+```sh
+$ echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bashrc
+$ . ~/.bashrc
+```
+
+## E ainda precisamos de mais alguma coisa?
+
+Ainda vamos precisar de mais umas ferramentas para completar nosso quadro
+de linguagens modernas:
+
+### Java/JDK
+
+Não podemos ter um set completo de linguagens sem incluir **Java**, por isso
+vamos instalar tanto o tempo de execução quanto o kit de desenvolvimento Java:
+```sh
+$ brew cask install oracle-jdk
+```
+
+Se preferir OpenJDK ao invés do Oracle JDK:
+```sh
+$ brew cask install java
+```
+
+### htop
+```sh
+$ brew install htop
+```
 
 TODO
-* Atualizar
-  - Git
-  - Ruby
-  - Emacs
-  - Perl5
-  
 * Instalar
-  - Java
-  - htop
-  - JDK
   - Rust
-  - Python3
-  - Perl6
   - NodeJS
   - VSCode
 
 * Configurar
   - Oh My Zsh com fontes Powerline
   - Terminal
-  - Vim

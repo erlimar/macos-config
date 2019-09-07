@@ -286,6 +286,8 @@ vamos instalar tanto o tempo de execução quanto o kit de desenvolvimento Java:
 $ brew cask install oracle-jdk
 ```
 
+Com isso temos o Java 12 pronto para desenvolver.
+
 Se preferir OpenJDK ao invés do Oracle JDK:
 ```sh
 $ brew cask install java
@@ -296,12 +298,68 @@ $ brew cask install java
 $ brew install htop
 ```
 
-TODO
-* Instalar
-  - Rust
-  - NodeJS
-  - VSCode
+### NodeJS
 
+Não dá pra falar de desenvolvimento de software moderno sem mencionar **NodeJS**:
+```sh
+$ brew install node
+```
+
+### Rust
+
+Eu particularmente considero o uso da linguagem Rust (https://rust-lang.org) para
+o desenvolvimento moderno de aplicativos de alto desempenho além da construção
+de sistemas nativos.
+
+O sistema de instalação é tão completo e eficiente, que nesse caso não vamos usar
+o `brew`, mas o próprio instalador (https://rustup.rs/):
+```sh
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$ cat ~/.cargo/env >> ~/.bashrc
+```
+
+### Visual Studio Code
+
+Esse é um editor inteligente moderno que acredito não poder faltar no seu set
+de ferramentas:
+```sh
+$ brew cask install visual-studio-code
+```
+
+### Docker
+
+Além das linguagens e editores que instalamos para utilizar no nosso dia-a-dia no
+desenvolvimento de softwares, ainda faltam coisas como banco de dados, serviços
+de mensageria, etc. Mas todos esses recursos tem mais a ver com o propósito
+específico de cada projeto.
+
+Eu particularmente no dia-a-dia, como preciso lidar com várias versões da mesma
+ferramenta, aprendi que as vezes isso fica difícil, porque muitas vezes precisamos
+desinstalar uma versão e depois instalar outra e ficar chaveando entre elas.
+É certo que as linguagens mais modernas já resolvem isso com os seus gerenciadores
+de versões, como o `rustup` que instalamos para **Rust**, com ela podemos gerenciar
+as várias versões de Rust em nossa máquina. Mas outras linguagens já antes mesmo
+usavam recursos parecidos, como **rvm** para Ruby, ou **nvm** para NodeJS, ou
+**virtualenv** para Python.
+
+Na verdade não precisávamos nem ao menos ter instalado todas essas ferramentas
+e linguagens na nossa máquina. Poderíamos simplesmente usá-las via **Docker**.
+
+Mas como isso depende de uma máquina com boa memória (8GB já resolvem, mas recomendo
+pelo menos 16GB), além de um bom processador.
+
+Eu já experimentei não ter nenhuma linguagem instalada diretamente em minha máquina,
+ao invés disso usava somente o Docker, assim não sujava minha máquina com
+instalações diversas. Mas no dia-a-dia ter a ferramenta rodando na máquina real
+é a melhor opção.
+
+Mas para todos os outros recursos (banco, cache, mensageria, etc.), uso o Docker,
+por isso vamos instalá-lo:
+```sh
+$ brew install docker
+```
+
+TODO
 * Configurar
   - Oh My Zsh com fontes Powerline
   - Terminal

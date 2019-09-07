@@ -12,18 +12,19 @@ My macOS developer configuration
 Como um desenvolvedore de software, no macOS já temos várias ferramentas prontas
 sem precisar de nenhuma instalação adicional. É só começar a desenvolver:
 
+- Git (https://git-scm.com)
 - Ruby (https://www.ruby-lang.org)
 - Perl 5 (https://www.perl.org)
 - Python 2 (https://www.python.org)
-- Apache 2 (https://www.apache.org)
+- Tcl/Tk 8.5 (https://www.tcl.tk)
+- Swift (https://swift.org)
 - PHP 7 (https://www.php.net)
+- Apache 2 (https://www.apache.org)
 - cURL (https://curl.haxx.se)
-- Emacs 22 (https://www.gnu.org/software/emacs)
 - Vim 8 (https://www.vim.org)
+- Emacs 22 (https://www.gnu.org/software/emacs)
 - OpenSSL/LibreSSL (https://www.libressl.org, https://www.openssl.org)
 - SQLite3 (https://www.sqlite.org)
-- Swift (https://swift.org)
-- Tcl/Tk 8.5 (https://www.tcl.tk)
 
 Além, é claro, de ser um UNIX (http://www.unix.org), e por isso tem inúmeras outras
 ferramentas que podemos usar no dia-a-dia, tais como (yacc, gnumake, tar, unzip, etc.).
@@ -56,6 +57,16 @@ Mas ainda precisamos de mais algumas ferramentas, e utilizaremos o Homebrew para
 instalá-las:
 
 ## Primeiramente vamos atualizar nossas ferramentas já instaladas
+
+### Git
+
+O Git talvez seja a ferramenta que mais utilizo no desenvolvimento de software.
+Aqui já temos a versão `2.17` instalada, mas vamos atualizá-la:
+```
+$ brew install git
+```
+
+Pronto, agora temos a última versão disponível.
 
 ### Ruby
 
@@ -143,6 +154,30 @@ Também vamos instalar o Python `v3` que já vem com o `pip`, e de quebra traz o
 $ brew install python@3
 ```
 
+### Tcl/Tk
+
+Já temos o Tcl/Tk 8.5, mas podemos usar também a última versão `8.6`:
+```
+$ brew install tcl-tk
+```
+
+Em seguida você precisará atualizar sua variável de ambiente $PATH:
+```sh
+$ echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> ~/.bashrc
+$ . ~/.bashrc
+```
+
+### Swift
+
+> TODO
+
+### PHP 7
+
+Também queremos a última versão do PHP disponível:
+```sh
+$ brew install php
+```
+
 ### Apache
 
 O Apache 2 já está instalado em nossa máquina, mas se você tentar acessar o endereço
@@ -153,7 +188,50 @@ $ sudo apachectl start
 ```
 
 Pronto! Agora ao acessar `http://localhost`, você verá uma página dizendo **It work!**.
-Isso quer dizer que o apche está rodando na nossa máquina.
+Isso quer dizer que o apache está rodando na nossa máquina.
+
+### cURL
+
+Agora a última versão do cURL:
+```sh
+$ brew install curl
+```
+
+Para esse também precisamos atualizar nossa variável de ambiente `$PATH`:
+```sh
+$ echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.bashrc
+$ . ~/.bashrc
+```
+
+### Vim 8
+
+Quanto ao Vim, eu particularmente prefiro usar o Neovim (https://neovim.io), mas como já temos
+o Vim 8 instalado, vamos primeiro atualizar para a última versão:
+```sh
+$ brew install vim
+```
+
+> PS: Agora de quebra ganhamos mais uma linguagem na nossa lista, **lua** na versão `5.3`
+
+Agora sim, vamos instalar o **Neovim**. A última versão é a `v0.3`:
+```sh
+$ brew install neovim
+```
+
+Quanto a configuração vom **Vim/Neovim**, isso é um capítulo à parte, por isso
+eu deixei um repositório com minha configuração toda documentada para você usá-la também.
+
+Acesse https://github.com/erlimar/vim-config, lá você encontra tanto minha configuração
+**Vim** quanto **Neovim**, e não só para macOS, mas também para Windows e Linux.
+De quebra tem um pequeno quadro com os comando mais usados, você pode usá-lo para
+aprender caso seja um iniciante em **Vim** (como eu).
+
+No caso do **macOS** eu recomendo atualizar o mapeamento da tecla **Lead** de `\\`
+para `\<Space` devido ao layout do teclado.
+
+- Emacs 22 (https://www.gnu.org/software/emacs)
+- OpenSSL/LibreSSL (https://www.libressl.org, https://www.openssl.org)
+- SQLite3 (https://www.sqlite.org)
 
 TODO
 * Atualizar
